@@ -1,5 +1,6 @@
 plugged/*
 session/*
+tags
 *.old
 .netrwhist
 .tern-config
