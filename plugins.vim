@@ -16,6 +16,9 @@ Plug 'tpope/vim-fugitive'
 " Git diff in the number column
 Plug 'airblade/vim-gitgutter'
 
+" Operators on blocks
+Plug 'michaeljsmith/vim-indent-object'
+
 " Autocompleter
 "function! DoRemote(arg)
   "UpdateRemotePlugins
