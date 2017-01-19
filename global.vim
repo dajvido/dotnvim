@@ -4,6 +4,7 @@ let g:python3_host_prog='/usr/local/bin/python3'
 
 " Assign leader key
 let g:mapleader=","
+let g:maplocalleader="\\"
 
 " Set theme to solarized
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1  " in theory should fix nvim color problems in practical it doesn't work
@@ -110,3 +111,10 @@ let g:go_list_type = "quickfix" " Issue with vim-go and syntastic is that the lo
 let g:go_fmt_command = "gofmt -tabs=false -tabwidth=2"
 let g:go_term_mode = "split"
 let g:go_term_enabled = 1
+
+" LaTeX configuration
+let g:tex_flavor='latex'
+let g:Tex_TreatMacViewerAsUNIX = 1
+let g:Tex_ExecuteUNIXViewerInForeground = 1
+let g:Tex_ViewRule_ps = 'open -a Preview'
+let g:Tex_ViewRule_pdf = 'open -a Preview'

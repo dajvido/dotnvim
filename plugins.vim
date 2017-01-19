@@ -63,6 +63,9 @@ Plug 'vim-ruby/vim-ruby'
 " Docs
 Plug 'rizzatti/dash.vim'
 
+" LaTeX
+Plug 'lervag/vimtex'
+
 " Markdown preview
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
