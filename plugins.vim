@@ -59,6 +59,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
+Plug 'elixir-lang/vim-elixir'
 
 " Docs
 Plug 'rizzatti/dash.vim'
