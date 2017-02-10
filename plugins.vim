@@ -48,10 +48,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'kassio/neoterm'
 
 " Syntaxes
+Plug 'w0rp/ale'
 Plug 'ngmy/vim-rubocop'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/yajs.vim'
-Plug 'scrooloose/syntastic'
 
 " Languages
 Plug 'fatih/vim-go'

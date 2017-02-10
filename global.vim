@@ -97,14 +97,7 @@ let g:neoterm_automap_keys = ',tt'
 let g:neoterm_size = 15
 
 " Syntax
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_haml_checkers = ['haml_lint']
-"let g:syntastic_ruby_checkers = ['rubocop']
-let g:neomake_ruby_enabled_makers=['rubocop']
-let g:used_javascript_libs = 'jquery,underscore,react,backbone'
 let g:vimrubocop_config = '~/.config/nvim/rubocop.yml'
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] } " start lagging while saving and opening files
-let g:go_list_type = "quickfix" " Issue with vim-go and syntastic is that the location list window that contains the output of commands such as :GoBuild and :GoTest might not appear
 
 " Go config
 "let g:go_fmt_command = \"goimports"
