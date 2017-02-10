@@ -114,6 +114,10 @@ nnoremap <silent> <leader>m :Neomake<CR>
 imap <expr><C-j>   pumvisible() ? "\<C-n>" : "\<C-j>"
 imap <expr><C-k>   pumvisible() ? "\<C-p>" : "\<C-k>"
 
+" Navigate between ALE errors
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
 " Undo completion
 "inoremap <expr><C-g> deoplete#mappings#undo_completion()
 

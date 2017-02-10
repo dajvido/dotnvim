@@ -97,6 +97,11 @@ let g:neoterm_automap_keys = ',tt'
 let g:neoterm_size = 15
 
 " Syntax
+let g:ale_sign_error = emoji#for('red_circle')
+let g:ale_sign_warning = emoji#for('large_blue_circle')
+let g:ale_echo_msg_error_str = emoji#for('red_circle')
+let g:ale_echo_msg_warning_str = emoji#for('large_blue_circle')
+let g:ale_echo_msg_format = '%severity% [%linter%] %s'
 let g:vimrubocop_config = '~/.config/nvim/rubocop.yml'
 
 " Go config
