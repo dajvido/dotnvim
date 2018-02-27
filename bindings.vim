@@ -41,23 +41,12 @@ nmap <silent> <C-N> :silent noh<CR>
 " Ctrol-E to switch between 2 last buffers
 nmap <C-E> :b#<CR>
 
-" yankring
-let g:yankring_replace_n_pkey = '<leader>['
-let g:yankring_replace_n_nkey = '<leader>]'
-" ,y to show the yankring
-nmap <leader>y :YRShow<cr>
-" put the yankring_history file in ~/.backup
-let g:yankring_history_dir = '~/.backup'
-
 " Deoplete autocomplete on the key
-"if has("gui_running")
-"    inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
-"else
-"    inoremap <silent><expr><C-@> deoplete#mappings#manual_complete()
-"endif
-
-" UltiSnips config
-" inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+if has("gui_running")
+  inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
+else
+  inoremap <silent><expr><C-@> deoplete#mappings#manual_complete()
+endif
 
 " Switch between tabs
 nmap <leader>1 1gt
@@ -106,10 +95,6 @@ map <C-P> :NERDTreeToggle<CR>
 " ,p to show current file in the tree
 nmap <leader>p :NERDTreeFind<CR>
 
-" neomake
-" build
-nnoremap <silent> <leader>m :Neomake<CR>
-
 " Movement within 'ins-completion-menu'
 imap <expr><C-j>   pumvisible() ? "\<C-n>" : "\<C-j>"
 imap <expr><C-k>   pumvisible() ? "\<C-p>" : "\<C-k>"
@@ -153,39 +138,8 @@ nnoremap <silent> ,tl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> ,tk :call neoterm#kill()<cr>
 
-" Rails commands
-command! Troutes :T rake routes
-command! -nargs=+ Troute :T rake routes | grep <args>
-command! Tmigrate :T rake db:migrate
-
 " Git commands
 command! -nargs=+ Tg :T git <args>
 
 " Files diff
 nmap <leader>diff :windo :diffthis<CR>
-
-" Docs
-nmap <silent> <leader>d <Plug>DashSearch
-
-" Go
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>d <Plug>(go-doc)
-au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>db <Plug>(go-doc-browser)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-
-" Fix for goimports - auto imports and retabs to spaces
-au BufWrite *.go call s:AutoImportsAndRetabToSpaces()
-function! s:AutoImportsAndRetabToSpaces()
-  GoImports
-  set expandtab
-  retab
-endfunction

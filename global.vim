@@ -1,16 +1,21 @@
 " Set python path For python extensions
-let g:python_host_prog='/usr/bin/python'
+let g:python_host_prog='/usr/local/bin/python'
 let g:python3_host_prog='/usr/local/bin/python3'
 
 " Assign leader key
 let g:mapleader=","
 let g:maplocalleader="\\"
 
-" Set theme to solarized
+" Set theme
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1  " in theory should fix nvim color problems in practical it doesn't work
+filetype plugin indent on
 syntax enable
 set background=dark
-colorscheme solarized
+set termguicolors
+colorscheme nofrils-dark
+let g:nofrils_strbackgrounds=1
+let g:nofrils_heavycomments=1
+let g:nofrils_heavylinenumbers=1
 
 " Ensure newline at EOF on save
 set eol
@@ -61,25 +66,14 @@ set timeoutlen=300 " Fix delay problem
 set ttimeoutlen=10 " Fix delay problem
 
 " FZF
+" set rtp+=/usr/local/opt/fzf
 let $FZF_DEFAULT_COMMAND='ag -g ""'
 let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 " Deoplete config
-"let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 " disable autocomplete
-""let g:deoplete#disable_auto_complete = 1
-" YCM config
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_add_preview_to_completeopt = 0
-" UltiSnips config
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"let g:deoplete#disable_auto_complete = 1
 
 " Airline tabline
 let g:airline_powerline_fonts=1
@@ -97,22 +91,6 @@ let g:neoterm_automap_keys = ',tt'
 let g:neoterm_size = 15
 
 " Syntax
-let g:ale_sign_error = emoji#for('red_circle')
-let g:ale_sign_warning = emoji#for('large_blue_circle')
-let g:ale_echo_msg_error_str = emoji#for('red_circle')
-let g:ale_echo_msg_warning_str = emoji#for('large_blue_circle')
+set signcolumn=yes
 let g:ale_echo_msg_format = '%severity% [%linter%] %s'
 let g:vimrubocop_config = '~/.config/nvim/rubocop.yml'
-
-" Go config
-"let g:go_fmt_command = \"goimports"
-let g:go_fmt_command = "gofmt -tabs=false -tabwidth=2"
-let g:go_term_mode = "split"
-let g:go_term_enabled = 1
-
-" LaTeX configuration
-let g:tex_flavor='latex'
-let g:Tex_TreatMacViewerAsUNIX = 1
-let g:Tex_ExecuteUNIXViewerInForeground = 1
-let g:Tex_ViewRule_ps = 'open -a Preview'
-let g:Tex_ViewRule_pdf = 'open -a Preview'
