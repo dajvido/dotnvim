@@ -8,6 +8,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " fzf is a general-purpose command-line fuzzy finder.
 Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
